@@ -1,5 +1,9 @@
-# $FreeBSD$
+# $FreeBSD: releng/10.3/secure/usr.bin/openssl/Makefile 238405 2012-07-12 19:30:53Z jkim $
 
+.include <bsd.own.mk>
+
+.if !defined(WITH_LIBRESSL)
+.warning Building OpenSSL
 PROG=	openssl
 
 DPADD=	${LIBSSL} ${LIBCRYPTO}
@@ -24,3 +28,7 @@ SRCS+=	app_rand.c apps.c asn1pars.c ca.c ciphers.c cms.c crl.c crl2p7.c \
 
 .PATH:	${LCRYPTO_SRC}/apps \
 	${.CURDIR}/man
+
+.else
+.include "Makefile.libressl"
+.endif # !"${WITH_LIBRESSL}" == "yes"

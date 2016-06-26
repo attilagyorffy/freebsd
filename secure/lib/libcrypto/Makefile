@@ -1,9 +1,13 @@
-# $FreeBSD$
+# $FreeBSD: releng/10.3/secure/lib/libcrypto/Makefile 288611 2015-10-03 16:24:20Z bdrewery $
+
+.include <bsd.own.mk>
+
+.if !defined(WITH_LIBRESSL)
 
 SHLIBDIR?=	/lib
 SUBDIR=		engines
 
-.include <bsd.own.mk>
+#.include <bsd.own.mk>
 
 LIB=		crypto
 SHLIB_MAJOR=	7
@@ -469,3 +473,7 @@ _bn_asmpath=	${LCRYPTO_SRC}/crypto/bn/asm
 	${LCRYPTO_SRC}/crypto/x509 \
 	${LCRYPTO_SRC}/crypto/x509v3 \
 	${.CURDIR}/man
+
+.else
+.include "Makefile.libressl"
+.endif # !"${WITH_LIBRESSL}" == "yes"

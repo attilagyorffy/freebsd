@@ -31,7 +31,7 @@
  * SUCH DAMAGE.
  *
  *	@(#)encrypt.h	8.1 (Berkeley) 6/4/93
- * $FreeBSD$
+ * $FreeBSD: head/contrib/telnet/libtelnet/encrypt.h 87139 2001-11-30 21:06:38Z markm $
  */
 
 /*
@@ -67,7 +67,7 @@ typedef unsigned char *BlockT;
 #if 0
 typedef struct { Block __; } Schedule[16];
 #else
-#define Schedule des_key_schedule
+#define Schedule DES_key_schedule
 #endif
 
 #define	VALIDKEY(key)	( key[0] | key[1] | key[2] | key[3] | \

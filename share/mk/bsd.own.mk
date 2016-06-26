@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: releng/10.3/share/mk/bsd.own.mk 294693 2016-01-24 22:28:18Z des $
 #
 # The include file <bsd.own.mk> set common variables for owner,
 # group, mode, and directories. Defaults are in brackets.
@@ -402,6 +402,7 @@ __DEFAULT_NO_OPTIONS = \
     DEBUG_FILES \
     HESIOD \
     INSTALL_AS_USER \
+    LIBRESSL \
     LLDB \
     NAND \
     OFED \

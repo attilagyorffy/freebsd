@@ -1,6 +1,6 @@
-# $FreeBSD: releng/10.2/secure/lib/Makefile 265037 2014-04-28 04:20:14Z jmmv $
+# $FreeBSD: releng/11.0/secure/lib/Makefile 265420 2014-05-06 04:22:01Z imp $
 
-.include <bsd.own.mk>
+.include <src.opts.mk>
 
 SUBDIR= 
 .if ${MK_OPENSSL} != "no"
